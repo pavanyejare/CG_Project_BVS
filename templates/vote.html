@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Biometric Voting System</title>
+
+
+
+<style type="text/css">
+
+ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333;}
+li { float: left; }
+li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 16px; }
+li a:hover:not(.active) {  background-color: #111; }
+.active {  background-color: #4CAF50; }
+
+html { height: 100%; font-size: 62.5% }
+
+body { height: 100%; background-color: #FFFFFF; font: 1.2em Verdana, Arial, Helvetica, sans-serif; }
+
+
+/* ==================== Form style sheet ==================== */
+
+form { margin: 25px 0 0 29px; width: 450px; padding-bottom: 30px; }
+
+fieldset { margin: 0 0 22px 0; border: 1px solid #095D92; padding: 12px 17px; background-color: #DFF3FF; }
+legend { font-size: 1.1em; background-color: #095D92; color: #FFFFFF; font-weight: bold; padding: 4px 8px; }
+
+label.float { float: left; display: block; width: 100px; margin: 4px 0 0 0; clear: left; }
+label { display: block; width: auto; margin: 0 0 10px 0; }
+label.spam-protection { display: inline; width: auto; margin: 0; }
+
+input.inp-text, textarea, input.choose, input.answer { border: 1px solid #909090; padding: 3px; }
+input.inp-text { width: 300px; margin: 0 0 8px 0; }
+textarea { width: 400px; height: 150px; margin: 0 0 12px 0; display: block; }
+
+input.choose { margin: 0 2px 0 0; }
+input.answer { width: 40px; margin: 0 0 0 10px; }
+input.submit-button { font: 1.4em Georgia, "Times New Roman", Times, serif; letter-spacing: 1px; display: block; margin: 23px 0 0 0; }
+
+form br { display: none; }
+
+/* ==================== Form style sheet END ==================== */
+
+</style>
+
+
+
+
+</head>
+
+<body>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="{{url_for('static',filename="banner.jpg")}}" width="1000" height="244" /></td>
+      </tr>
+    </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>  <ul>
+		  <li><a href="/">Home</a></li>
+ 		  <li><a href="#news">Registraion</a></li>
+                  <li><a class="active"  href="#">Vote</a></li>
+                  <li><a href="#about">Contact Us</a></li>
+               </ul> 
+           </td>
+        </tr>
+      </table>
+       <h1 align = "center"> Welcome </h1>  
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="right">Click on button and scan your Finger </td>
+	    <td>  <form action="{{url_for('find')}}" method="POST">
+		   <input type="submit" name="Submit" value="Scan Finger" />
+	 	</form>
+            </td> 
+	</tr>
+        <tr>
+	    <td align="center" colspan="2"><h1> {{msg}} </h1></td> 
+	</tr>
+      </table>
+
+    <p>&nbsp;</p></td>
+  </tr>
+</table>
+<p align="center">{{ack}}&nbsp;{{status}}</p>
+</body>
+</html>
